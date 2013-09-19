@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 10.times { User.create( username: Faker::Name.name, email: Faker::Internet.email, password_hash: "password" ) }
 
-30.times { Question.create( title: Faker::Lorem.sentence, content: Faker::Lorem.paragraph, user_id: rand(1..10) ) }
+30.times { Question.create( title: "#{Faker::Lorem.sentence}?", content: "#{Faker::Lorem.paragraph}?", user_id: rand(1..10) ) }
 
 90.times { Answer.create( content: Faker::Lorem.paragraph, user_id: rand(1..10), question_id: rand(1..30) ) }
 
-commentable_type = ["question", "answer"]
+commentable_type = ["Question", "Answer"]
 commentable_id = [1..30, 1..90]
 
 120.times do 

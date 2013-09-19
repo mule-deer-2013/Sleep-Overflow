@@ -1,0 +1,6 @@
+<%= form_for @comment, url: {action: "create"} do |f| -%>
+  <%= f.text_area :content, size: "40x12", placeholder: "Details" %><br />
+ <!-- TODO: This is hardcoded, replace with @user.id -->
+  <%= f.hidden_field(:user_id, value: 1) %>
+  <%= f.submit "Create comment" %>
+<% end -%>

@@ -1,21 +1,37 @@
 <% if flash[:notices] %>
-  <%= flash[:notices] %>
-  <br>
+    <%= flash[:notices] %>
+    <br>
 <% end %>
+
 <% if @current_user %>
-  <p>Hi <%= @current_user.username %></p>
-  <%= form_tag(signout_path, method: "delete") do %>
-  <%= button_tag('logout') %>
-  <% end %>
+    <p>Hi <%= @current_user.username %></p>
+
+    <%= form_tag(signout_path, method: "delete") do %>
+        <%= button_tag('logout') %>
+      <% end %>
+      
+      <%= form_tag(new_question_path, method: "get") do %>
+        <%= button_tag('create question') %>
+    <% end %>
+
+    <% if @question %>
+
+      <%= form_tag("/questions/#{@question.id}/answers/new", method: "get") do %>
+        <%= button_tag('answer this question') %>
+      <% end %>
+    <% end %>
+
 <% else %>
+
   <%= form_tag(signin_path, method: "post") do %>
-    <%= label_tag(:username) %>
-    <%= text_field_tag(:username) %>
-    <%= label_tag(:password_hash) %>
-    <%= text_field_tag(:password_hash) %>
-    <%= button_tag('sign in') %>
+      <%= label_tag(:username) %>
+      <%= text_field_tag(:username) %>
+      <%= label_tag(:password_hash) %>
+      <%= text_field_tag(:password_hash) %>
+      <%= button_tag('sign in') %>
   <% end %>
+
   <%= form_tag(signup_path, method: "post") do %>
-    <%= button_tag('sign up') %>
+      <%= button_tag('sign up') %>
   <% end %>
 <% end %>
