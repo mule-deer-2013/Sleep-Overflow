@@ -6,6 +6,14 @@ SleepUnderflow::Application.routes.draw do
       end
     end
   end
+  resources :sessions, only: [:new, :create, :destroy]
+  resources :users
+
+  match "/signup", to: 'users#new', via: 'post'
+  match '/signin', to: 'sessions#new', via: 'post'
+  match '/signout', to: 'sessions#destroy', via: 'delete'
+
+  root to: "questions#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
