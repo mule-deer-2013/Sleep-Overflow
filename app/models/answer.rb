@@ -7,6 +7,6 @@ class Answer < ActiveRecord::Base
   belongs_to :question
 
   def score
-  	return votes.where(up_down: 1).count - votes.where(up_down: 0).count
+  	return votes.where(up_down: true).count - votes.where(up_down: false).count
   end
 end

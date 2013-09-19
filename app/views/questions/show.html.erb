@@ -10,7 +10,10 @@
 
 
 <% @question.answers.each do |answer| %>
-  Score: <%= answer.score %>  <strong><%= answer.content %></strong><br><br>
+  <%= button_to 'v', { controller: :votes, action: :create, form: { up_down: 0, votable_type: 'Answer', votable_id: answer.id } }, { class: "vote-button" } %>
+  <span class="score"><%= answer.score %></span>
+  <%= button_to '^', { controller: :votes, action: :create, form: { up_down: 1, votable_type: 'Answer', votable_id: answer.id } }, { class: "vote-button" } %>
+  <strong><%= answer.content %></strong><br><br>
 
   <% answer.comments.each do |comment| %>
     <%= comment.content %><br>

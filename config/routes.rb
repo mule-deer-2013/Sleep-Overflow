@@ -8,6 +8,7 @@ SleepUnderflow::Application.routes.draw do
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
+  resources :votes, only: [:create]
 
   match "/signup", to: 'users#new', via: 'post'
   match '/signin', to: 'sessions#new', via: 'post'
