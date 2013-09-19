@@ -8,8 +8,6 @@ class QuestionsController < ApplicationController
 
   def new
     @question = Question.new
-    # TODO: NEED USER OBJECT
-    # @user = current_user
   end
 
   def create

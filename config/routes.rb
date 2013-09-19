@@ -1,10 +1,10 @@
 SleepUnderflow::Application.routes.draw do
 
   resources :questions, :except => [:edit, :update, :destroy] do
-    resources :answers, :comments, :only => [:create, :new] do
-      resources :comments, :only => [:create, :new] do
-      end
-    end
+    resources :answers, :comments, :only => [:create, :new]
+  end
+  resources :answers, only: [] do   
+    resources :comments, :only => [:create, :new]
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :users

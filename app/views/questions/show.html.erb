@@ -4,7 +4,7 @@
 <% @question_comments.each do |comment| %>
   <%= comment.content %><br>
 <% end %>
-<%= form_tag("/questions/#{@question.id}/comments/new", method: "get") do%>
+<%= form_tag(new_question_comment_path(@question), method: "get") do%>
   <%= button_tag('comment on this question') %>
 <% end %><br><br><br><br><br><br>
 
@@ -15,7 +15,7 @@
   <% Comment.where(commentable_id: answer.id).where(commentable_type: "Answer").each do |comment| %>
     <%= comment.content %><br>
   <% end %><br>
-  <%= form_tag("/questions/#{@question.id}/answers/#{answer.id}/comments/new", method: "get") do%>
+  <%= form_tag(new_answer_comment_path(answer), method: "get") do%>
     <%= button_tag('comment on this answer') %>
     <% end %><br><br>
 <% end %>
