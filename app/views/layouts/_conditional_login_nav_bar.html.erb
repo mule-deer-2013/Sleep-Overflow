@@ -22,17 +22,8 @@
 
 <% else %>
 
-  <%= form_tag(signin_path, method: "post") do %>
-      <%= label_tag(:username) %>
-      <%= text_field_tag(:username) %>
-      <%= label_tag(:password_hash) %>
-      <%= text_field_tag(:password_hash) %>
-      <%= button_tag('sign in') %>
-  <% end %>
+  <%= "you are not logged in" %>
 
-  <%= form_tag(signup_path, method: "post") do %>
-      <%= button_tag('sign up') %>
-  <% end %>
 <% end %>
 
 </ul>
