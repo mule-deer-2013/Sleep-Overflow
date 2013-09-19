@@ -9,8 +9,8 @@ SleepUnderflow::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
 
-  match "/signup", to: 'users#new', via: 'post'
-  match '/signin', to: 'sessions#new', via: 'post'
+  
+  match '/signin', to: 'sessions#create', via: 'post'
   match '/signout', to: 'sessions#destroy', via: 'delete'
 
   root to: "questions#index"

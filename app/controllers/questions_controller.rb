@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   def index
+    @user = User.new
     @questions = Question.all
     if session[:user_id]
       @current_user = User.find(session[:user_id])
