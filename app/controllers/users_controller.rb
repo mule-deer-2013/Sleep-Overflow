@@ -17,4 +17,12 @@ class UsersController < ApplicationController
   end
   
 
+  def show
+    @username = current_user.username
+    @user_answers = current_user.answers
+    @user_questions = current_user.questions
+    @user_comments = current_user.comments
+
+  end
+
 end

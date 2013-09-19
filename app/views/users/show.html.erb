@@ -1,0 +1,33 @@
+<br> <br>
+<h1>This is the profile page</h1>
+<h2> Questions I have posted </h2>
+<div class="user_questions" >
+<% @user_questions.each do |this_question| %> 
+<br> <%= link_to this_question.title, question_path(this_question) %>
+<% end %>
+</div>
+
+<h2> Answers I have submitted </h2>
+<div class="user_answers">
+  <% @user_answers.each do |this_answer| %> 
+<br> <%= link_to this_answer.question.title, question_path(this_answer) %>
+<%= this_answer.content  %>
+<% end %>
+</div>
+
+
+<h2> Comments I have made </h2>
+<div class ="user_comments">
+<% @user_comments.each do |this_comment| %>
+<% if this_comment.commentable_type == "Answer" %>
+<%= link_to this_comment.commentable.question.title, question_path(this_comment.commentable.question) %>
+<% else %>
+<%= link_to this_comment.commentable.title, question_path(this_comment.commentable) %>
+<%end%>
+
+
+<%= this_comment.content %><br>
+<% end %>
+
+</div>
+

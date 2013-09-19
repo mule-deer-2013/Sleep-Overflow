@@ -1,5 +1,44 @@
+<div class="navbar">
 <% if flash[:notices] %>
     <%= flash[:notices] %>
-    <br>
 <% end %>
+<ul>
+<% if current_user %>
+    <li>Hi <%= current_user.username %></li>
+
+    <%= form_tag(signout_path, method: "delete") do %>
+        <li><%= button_tag('logout') %></li>
+      <% end %>
+      
+      <%= form_tag(new_question_path, method: "get") do %>
+        <li><%= button_tag('create question') %></li>
+      <%end%>
+
+      <%= form_tag(user_path(current_user), method:"get") do %>
+        <li><%= button_tag("my profile page") %></li>
+      <% end %>
+
+  <% link_to "my profile page", user_path(current_user) %>
+
+<% else %>
+
+  <%= form_tag(signin_path, method: "post") do %>
+      <%= label_tag(:username) %>
+      <%= text_field_tag(:username) %>
+      <%= label_tag(:password_hash) %>
+      <%= text_field_tag(:password_hash) %>
+      <%= button_tag('sign in') %>
+  <% end %>
+
+  <%= form_tag(signup_path, method: "post") do %>
+      <%= button_tag('sign up') %>
+  <% end %>
+<% end %>
+
+</ul>
+</div>
+
+<br><br><br>
+
+<br>
 

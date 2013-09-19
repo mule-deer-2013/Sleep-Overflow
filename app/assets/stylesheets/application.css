@@ -11,3 +11,25 @@
  *= require_self
  *= require_tree .
  */
+
+.navbar{
+  width: 100%;
+  position:fixed;
+  top:0px;
+  background-color:grey;
+
+}
+
+.navbar ul {
+  list-style-type:none;
+  margin:0 auto;
+  padding:0;
+}
+
+.navbar li {
+  float:left;
+  display: block;
+  padding:10px;
+}
+  ;
+
