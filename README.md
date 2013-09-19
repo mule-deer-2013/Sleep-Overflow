@@ -1,0 +1,11 @@
+TODO:
+ - Allow Users to vote on questions. Currently, the number of votes are displayed but you cannot up or down vote it.
+ - Our controller isn't very skinny. A lot of the code written in the controller should probably be moved to model or helpers.
+ - We do not have very many tests. Our Models are not well tested with presence and associations. Our controllers are also not well tested. Additional feature tests should probably be written.
+ - Votes and Comments are being queried from the view in Questions#show, which should not be done since our view is talking directly to the database.
+ - Passwords currently don't matter. You can login with any password you would like or without a password at all.
+ - Not every controller checks if you are logged in. 
+ - Navbar is just an html that gets appended to the top of every layout. Not in any navbar div. Greeting, logout and create questions should be nested together.
+ - Navbar should also include home page redirect.
+ - Navbar is not consistantly the same across all page. Even if you are logged in, it may show a login form.
+ - Stretch: we don't have a user profile page.
