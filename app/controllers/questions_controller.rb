@@ -9,6 +9,10 @@ class QuestionsController < ApplicationController
     question = Question.new(params[:question])
     puts params[:question]
     question.save
+    redirect_to question_path(question)
+  end
+
+  def show
   end
 
 end
