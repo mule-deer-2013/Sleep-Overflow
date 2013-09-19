@@ -1,7 +1,7 @@
 <h2><%= @question.title %></h2>
 <p><strong><%= @question.content %></strong></p>
 
-<% @question_comments.each do |comment| %>
+<% @question.comments.each do |comment| %>
   <%= comment.content %><br>
 <% end %>
 <%= form_tag(new_question_comment_path(@question), method: "get") do%>
@@ -9,10 +9,10 @@
 <% end %><br><br><br><br><br><br>
 
 
-<% @answers.each do |answer| %>
-  <%= Vote.where(votable_id: answer.id).count %>  <strong><%= answer.content %></strong><br><br>
+<% @question.answers.each do |answer| %>
+  Score: <%= answer.score %>  <strong><%= answer.content %></strong><br><br>
 
-  <% Comment.where(commentable_id: answer.id).where(commentable_type: "Answer").each do |comment| %>
+  <% answer.comments.each do |comment| %>
     <%= comment.content %><br>
   <% end %><br>
   <%= form_tag(new_answer_comment_path(answer), method: "get") do%>
