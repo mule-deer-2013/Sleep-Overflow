@@ -5,4 +5,8 @@ class Answer < ActiveRecord::Base
   has_many :votes, as: :votable
   belongs_to :user
   belongs_to :question
+
+  def score
+  	return votes.where(up_down: true).count - votes.where(up_down: false).count
+  end
 end

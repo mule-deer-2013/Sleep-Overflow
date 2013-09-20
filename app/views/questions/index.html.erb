@@ -1,4 +1,34 @@
+<% if @current_user %>
+    <p>Hi <%= @current_user.username %></p>
 
+    <%= form_tag(signout_path, method: "delete") do %>
+        <%= button_tag('logout') %>
+      <% end %>
+      
+      <%= form_tag(new_question_path, method: "get") do %>
+        <%= button_tag('create question') %>
+    <% end %>
+
+    <% if @question %>
+
+      <%= form_tag("/questions/#{@question.id}/answers/new", method: "get") do %>
+        <%= button_tag('answer this question') %>
+      <% end %>
+    <% end %>
+
+<% else %>
+
+  <%= form_tag ("/signin")  do %>
+    <%=  label_tag("username") %>
+    <%=  text_field_tag("username") %>
+    <%=  label_tag("password") %>
+    <%=  password_field_tag("password") %>
+    <%= submit_tag("signin") %>
+  <% end %>
+
+  <%= link_to "Sign up", new_user_path %>
+
+<% end %>
 
 <% @questions.each do |question|%>
 <%= link_to question.title, question %><br>
