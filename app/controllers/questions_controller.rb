@@ -18,6 +18,7 @@ class QuestionsController < ApplicationController
 
   def show
     if session[:user_id]
+      @vote = Vote.new
       @current_user = User.find(session[:user_id])
     end
     @question = Question.find(params[:id])

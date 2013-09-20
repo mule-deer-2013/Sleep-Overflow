@@ -1,16 +1,17 @@
 SleepUnderflow::Application.routes.draw do
 
   resources :questions, :except => [:edit, :update, :destroy] do
+    resources :votes, only: [:create, :update]
     resources :answers, :comments, :only => [:create, :new]
   end
   resources :answers, only: [] do   
+    resources :votes, only: [:create, :update]
     resources :comments, :only => [:create, :new]
   end
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
-  resources :votes, only: [:create]
 
-  
+
   match '/signin', to: 'sessions#create', via: 'post'
   match '/signout', to: 'sessions#destroy', via: 'delete'
 

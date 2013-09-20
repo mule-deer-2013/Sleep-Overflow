@@ -14,11 +14,35 @@
 
 <% @question.answers.each do |answer| %>
   <% if current_user %>
-    <%= button_to 'v', { controller: :votes, action: :create, form: { up_down: 0, votable_type: 'Answer', votable_id: answer.id } }, { class: "vote-button" } %>
+    <%if vote = current_vote(answer) %>
+      <%= form_for vote, url: answer_vote_path(answer, vote) do |f| %>
+        <%= f.hidden_field(:up_down, value: true) %>
+        <%= f.submit "upvote"%>
+      <% end %>
+    <% else %>
+      <%= form_for @vote, url: answer_votes_path(answer, @vote) do |f| %>
+        <%= f.hidden_field(:votable_id, value: answer.id) %>
+        <%= f.hidden_field(:votable_type, value: "Answer") %>
+        <%= f.hidden_field(:up_down, value: true) %>
+        <%= f.submit "upvote"%>
+      <% end %>
+    <% end %>
   <% end %>
   <span class="score"><%= answer.score %></span>
   <% if current_user %>
-    <%= button_to '^', { controller: :votes, action: :create, form: { up_down: 1, votable_type: 'Answer', votable_id: answer.id } }, { class: "vote-button" } %>
+    <%if vote = current_vote(answer) %>
+      <%= form_for vote, url: answer_vote_path(answer, vote) do |f| %>
+        <%= f.hidden_field(:up_down, value: false) %>
+        <%= f.submit "Downvote"%>
+      <% end %>
+    <% else %>
+      <%= form_for @vote, url: answer_votes_path(answer, @vote) do |f| %>
+        <%= f.hidden_field(:votable_id, value: answer.id) %>
+        <%= f.hidden_field(:votable_type, value: "Answer") %>
+        <%= f.hidden_field(:up_down, value: false) %>
+        <%= f.submit "Downvote"%>
+      <% end %>
+    <% end %>
   <% end %>
   <strong><%= answer.content %></strong><br><br>
 
@@ -28,6 +52,6 @@
   <% if current_user %>
     <%= form_tag(new_answer_comment_path(answer), method: "get") do%>
       <%= button_tag('comment on this answer') %>
-      <% end %><br><br>
-    <% end %>
+    <% end %><br><br>
+  <% end %>
 <% end %>
