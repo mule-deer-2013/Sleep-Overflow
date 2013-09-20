@@ -7,18 +7,16 @@
     <li>Hi <%= current_user.username %></li>
 
     <%= form_tag(signout_path, method: "delete") do %>
-        <li><%= button_tag('logout') %></li>
+        <li><%= button_tag('logout', class: "navbar_logout") %></li>
       <% end %>
       
-      <%= form_tag(new_question_path, method: "get") do %>
-        <li><%= button_tag('create question') %></li>
+      <%= form_tag(new_question_path, method: "get", ) do %>
+        <li><%= button_tag('create question', class: "navbar_create") %></li>
       <%end%>
 
       <%= form_tag(user_path(current_user), method:"get") do %>
-        <li><%= button_tag('my profile page') %></li>
+        <li><%= button_tag('my profile page', class: "navbar_profile") %></li>
       <% end %>
-
-  <% link_to "my profile page", user_path(current_user) %>
 
 <% else %>
 
