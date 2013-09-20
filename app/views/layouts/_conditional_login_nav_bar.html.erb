@@ -1,37 +1,33 @@
+<div class="navbar">
 <% if flash[:notices] %>
     <%= flash[:notices] %>
-    <br>
 <% end %>
-
-<% if @current_user %>
-    <p>Hi <%= @current_user.username %></p>
+<ul>
+<% if current_user %>
+    <li>Hi <%= current_user.username %></li>
 
     <%= form_tag(signout_path, method: "delete") do %>
-        <%= button_tag('logout') %>
+        <li><%= button_tag('logout', class: "navbar_logout") %></li>
       <% end %>
       
-      <%= form_tag(new_question_path, method: "get") do %>
-        <%= button_tag('create question') %>
-    <% end %>
+      <%= form_tag(new_question_path, method: "get", ) do %>
+        <li><%= button_tag('create question', class: "navbar_create") %></li>
+      <%end%>
 
-    <% if @question %>
-
-      <%= form_tag("/questions/#{@question.id}/answers/new", method: "get") do %>
-        <%= button_tag('answer this question') %>
+      <%= form_tag(user_path(current_user), method:"get") do %>
+        <li><%= button_tag('my profile page', class: "navbar_profile") %></li>
       <% end %>
-    <% end %>
 
 <% else %>
 
-  <%= form_tag(signin_path, method: "post") do %>
-      <%= label_tag(:username) %>
-      <%= text_field_tag(:username) %>
-      <%= label_tag(:password_hash) %>
-      <%= text_field_tag(:password_hash) %>
-      <%= button_tag('sign in') %>
-  <% end %>
+  <%= "you are not logged in" %>
 
-  <%= form_tag(signup_path, method: "post") do %>
-      <%= button_tag('sign up') %>
-  <% end %>
 <% end %>
+
+</ul>
+</div>
+
+<br><br><br>
+
+<br>
+
