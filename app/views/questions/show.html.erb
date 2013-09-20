@@ -5,21 +5,29 @@
 <% @question.comments.each do |comment| %>
   <%= comment.content %><br>
 <% end %>
-<%= form_tag(new_question_comment_path(@question), method: "get") do%>
-  <%= button_tag('comment on this question') %>
-<% end %><br><br><br><br><br><br>
 
+<% if current_user %>
+  <%= form_tag(new_question_comment_path(@question), method: "get") do%>
+    <%= button_tag('comment on this question') %>
+  <% end %><br><br><br><br><br><br>
+<% end %>
 
 <% @question.answers.each do |answer| %>
-  <%= button_to 'v', { controller: :votes, action: :create, form: { up_down: 0, votable_type: 'Answer', votable_id: answer.id } }, { class: "vote-button" } %>
+  <% if current_user %>
+    <%= button_to 'v', { controller: :votes, action: :create, form: { up_down: 0, votable_type: 'Answer', votable_id: answer.id } }, { class: "vote-button" } %>
+  <% end %>
   <span class="score"><%= answer.score %></span>
-  <%= button_to '^', { controller: :votes, action: :create, form: { up_down: 1, votable_type: 'Answer', votable_id: answer.id } }, { class: "vote-button" } %>
+  <% if current_user %>
+    <%= button_to '^', { controller: :votes, action: :create, form: { up_down: 1, votable_type: 'Answer', votable_id: answer.id } }, { class: "vote-button" } %>
+  <% end %>
   <strong><%= answer.content %></strong><br><br>
 
   <% answer.comments.each do |comment| %>
     <%= comment.content %><br>
   <% end %><br>
-  <%= form_tag(new_answer_comment_path(answer), method: "get") do%>
-    <%= button_tag('comment on this answer') %>
-    <% end %><br><br>
+  <% if current_user %>
+    <%= form_tag(new_answer_comment_path(answer), method: "get") do%>
+      <%= button_tag('comment on this answer') %>
+      <% end %><br><br>
+    <% end %>
 <% end %>

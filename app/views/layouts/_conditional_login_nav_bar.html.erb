@@ -18,9 +18,23 @@
         <li><%= button_tag('my profile page', class: "navbar_profile") %></li>
       <% end %>
 
+      <% unless index_page? %>
+      <%= link_to( "Home", { action: "index", controller: "questions" } ) %>
+      <% end %>
+
+   
+
 <% else %>
 
-  <%= "you are not logged in" %>
+  <%= form_tag ("/signin")  do %>
+    <%=  label_tag("username") %>
+    <%=  text_field_tag("username") %>
+    <%=  label_tag("password") %>
+    <%=  password_field_tag("password") %>
+    <%= submit_tag("signin") %>
+  <% end %>
+
+  <%= link_to "Sign up", new_user_path %>
 
 <% end %>
 
