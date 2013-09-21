@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 feature 'User can add questions' do
+  let!(:user) { FactoryGirl.create :user }
+  let!(:question) { FactoryGirl.create :question, user_id: user.id }
+
   context "on add questions page" do
     it "sees a form to create a question" do
       visit new_question_path
@@ -10,6 +13,10 @@ feature 'User can add questions' do
     end
 
     before do 
+      visit root_path
+      fill_in "Username", :with => user.username
+      fill_in "Password", :with => "password"
+      click_button "signin"
       visit new_question_path
       fill_in "question_title", :with => "Do I have a question?"
       fill_in "question_content", :with => "Yes, you do."

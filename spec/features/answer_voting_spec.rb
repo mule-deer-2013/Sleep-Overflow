@@ -10,19 +10,19 @@ let!(:answer) { FactoryGirl.create :answer, user_id: user.id, question_id: quest
       visit root_path
     end
 
-    it "can see voting options if logged in" do
+    it "if logged in" do
       fill_in "Username", :with => user.username
       fill_in "Password", :with => "password"
       click_button "signin"
       visit question_path(question)
-      page.should have_button("Upvote")
-      page.should have_button("Downvote")
+      page.should have_selector(".answer_upvote")
+      page.should have_selector(".answer_downvote")
     end
 
     it "can cannot see voting options not logged in" do
       visit question_path(question)
-      page.should_not have_button("Upvote")
-      page.should_not have_button("Downvote")
+      page.should_not have_selector(".answer_upvote")
+      page.should_not have_selector(".answer_downvote")
     end
 
     it "can see the number of votes" do
@@ -42,27 +42,46 @@ let!(:answer) { FactoryGirl.create :answer, user_id: user.id, question_id: quest
     end
 
     it "cannot upvote same answer twice" do
-      click_button "Upvote"
-      expect { click_button "Upvote" }.to_not change{ Vote.count }.by(1)
+      within ".new_answer_upvote" do 
+        click_button "upvote"
+      end
+      within ".edit_answer_upvote" do 
+        expect { click_button "upvote" }.to_not change{ Vote.count }.by(1)
+      end
     end
 
     it "cannot downvote same answer twice" do
-      click_button "Downvote"
-      expect { click_button "Downvote" }.to_not change{ Vote.count }.by(1)
+      within ".new_answer_downvote" do
+        click_button "downvote"
+      end
+      # need to put "within blahblahblah inside of the curly block below"
+      within ".edit_answer_downvote" do
+        expect { click_button "downvote" }.to_not change{ Vote.count }.by(1)
+      end
     end
 
     it "can change the vote count" do
-      expect { click_button "Upvote" }.to change{ answer.score }.by(1)
+      within ".new_answer_upvote" do
+        expect { click_button "upvote" }.to change{ answer.score }.by(1)
+      end
     end
 
     it "can switch from upvote to downvote" do
-      click_button "Upvote"
-      expect { click_button "Downvote" }.to change{ answer.score }.by(-2)
+      within ".new_answer_upvote" do
+        click_button "upvote"
+      end
+      within ".edit_answer_downvote" do
+        expect { click_button "downvote" }.to change{ answer.score }.by(-2)
+      end
     end
 
     it "can unvote" do
-      click_button "Upvote"
-      expect { click_button "Upvote" }.to change{ answer.score }.by(-1)
+      within ".new_answer_upvote" do 
+        click_button "upvote"
+      end
+      within ".edit_answer_upvote" do 
+        expect { click_button "upvote" }.to change{ answer.score }.by(-1)
+      end
     end
   end
 

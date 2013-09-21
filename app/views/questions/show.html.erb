@@ -1,11 +1,11 @@
 <br>
 <h2><%= @question.title %></h2>
 
-<%= render partial: "vote_form", locals: { votable: @question, vote_boolean: true, new_vote: @vote } %>
+<%= render partial: "vote_form", locals: { votable: @question, vote_boolean: true, new_vote: @vote, up_down: "upvote" } %>
 
 <span class="question_score" ><%= @question.score %></span>
 
-<%= render partial: "vote_form", locals: { votable: @question, vote_boolean: false, new_vote: @vote } %>
+<%= render partial: "vote_form", locals: { votable: @question, vote_boolean: false, new_vote: @vote, up_down: "downvote" } %>
 
 <p><strong><%= @question.content %></strong></p>
 
@@ -17,11 +17,11 @@
 
 <% @question.answers.each do |answer| %>
 
-  <%= render partial: "vote_form", locals: { votable: answer, vote_boolean: true, new_vote: @vote } %>
+  <%= render partial: "vote_form", locals: { votable: answer, vote_boolean: true, new_vote: @vote, up_down: "upvote" } %>
 
   <span class="answer_score" ><%= answer.score %></span>
 
-  <%= render partial: "vote_form", locals: { votable: answer, vote_boolean: false, new_vote: @vote } %>
+  <%= render partial: "vote_form", locals: { votable: answer, vote_boolean: false, new_vote: @vote, up_down: "downvote" } %>
 
   <strong><%= answer.content %></strong><br><br>
 
