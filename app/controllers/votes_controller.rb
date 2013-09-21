@@ -1,10 +1,14 @@
 class VotesController < ApplicationController
 	def create
     vote = current_user.votes.build(params[:vote])
-    # binding.pry
 		vote.save
-    redirect_to question_path(vote.votable.question)
-
+    puts vote.votable_type
+    if vote.votable_type == "Answer"
+      redirect_to question_path(vote.votable.question)
+    elsif vote.votable_type == "Question"
+      redirect_to question_path(vote.votable)
+    end
+      
 		# to add AJAX ...if you want to
 		# 1. Instead of redirect_to, use render json: { score: vote.votable.score }
 		# 2. Add 'remote: true' to the options after controller, action, and before form in the button_to
@@ -19,9 +23,12 @@ class VotesController < ApplicationController
       vote.up_down = params[:vote][:up_down]
       vote.save
     end
-    redirect_to question_path(vote.votable.question)
+    if vote.votable_type == "Answer"
+      redirect_to question_path(vote.votable.question)
+    elsif vote.votable_type == "Question"
+      redirect_to question_path(vote.votable)
+    end 
   end
-
 end
 
 

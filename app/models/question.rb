@@ -6,4 +6,8 @@ class Question < ActiveRecord::Base
   has_many :answers
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
+
+  def score
+    return votes.where(up_down: true).count - votes.where(up_down: false).count
+  end
 end

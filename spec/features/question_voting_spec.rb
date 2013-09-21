@@ -24,7 +24,7 @@ let!(:question) { FactoryGirl.create :question, user_id: user.id }
       page.should_not have_button("Downvote")
     end
 
-    it "including number of: votes" do
+    it "including number of votes" do
       visit question_path(question)
       page.should have_selector(".question_score")
     end    
@@ -56,12 +56,12 @@ let!(:question) { FactoryGirl.create :question, user_id: user.id }
 
     it "can switch from downvote to upvote" do
       click_button "Downvote"
-      expect { click_button "Upvote" }.to change{ question.score }.by(-2)
+      expect { click_button "Upvote" }.to change{ question.score }.by(2)
     end
 
     it "can unvote" do 
       click_button "Upvote"
-      expect { click_button "Upvote" }.to change{ question_score }.by(-1)zzzzzzzzzzzzzzzzz
+      expect { click_button "Upvote" }.to change{ question.score }.by(-1)
     end
 
   end

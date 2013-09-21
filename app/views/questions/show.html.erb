@@ -1,5 +1,37 @@
 <br>
 <h2><%= @question.title %></h2>
+
+<% if current_user %>
+  <%if vote = current_vote(@question) %>
+    <%= form_for vote, url: question_vote_path(@question, vote) do |f| %>
+      <%= f.hidden_field(:up_down, value: true) %>
+      <%= f.submit "Upvote"%>
+    <% end %>
+  <% else %>
+    <%= form_for @vote, url: question_votes_path(@question, @vote) do |f| %>
+      <%= f.hidden_field(:votable_id, value: @question.id) %>
+      <%= f.hidden_field(:votable_type, value: "Question") %>
+      <%= f.hidden_field(:up_down, value: true) %>
+      <%= f.submit "Upvote"%>
+    <% end %>
+  <% end %>
+<% end %>
+<span class="question_score" ><%= @question.score %></span>
+<% if current_user %>
+  <%if vote = current_vote(@question) %>
+    <%= form_for vote, url: question_vote_path(@question, vote) do |f| %>
+      <%= f.hidden_field(:up_down, value: false) %>
+      <%= f.submit "Downvote"%>
+    <% end %>
+  <% else %>
+    <%= form_for @vote, url: question_votes_path(@question, @vote) do |f| %>
+      <%= f.hidden_field(:votable_id, value: @question.id) %>
+      <%= f.hidden_field(:votable_type, value: "Question") %>
+      <%= f.hidden_field(:up_down, value: false) %>
+      <%= f.submit "Downvote"%>
+    <% end %>
+  <% end %>
+<% end %>
 <p><strong><%= @question.content %></strong></p>
 
 <% @question.comments.each do |comment| %>
