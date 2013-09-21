@@ -2,6 +2,7 @@ class QuestionsController < ApplicationController
   def index
     @user = User.new
     @questions = Question.all
+    @vote = Vote.new
   end
 
   def new

@@ -20,11 +20,13 @@ commentable_id = [1..30, 1..90]
 end
 
 10.times do |id|
-  votable_type = ["question", "answer"]
+  votable_type = ["Question", "Answer"]
   votable_id = [[*1..30], [*1..90]]
-  20.times do
+  user = User.find(id + 1)
+  90.times do
     vote_type = rand(2)
-    Vote.create(user_id: (id + 1), votable_id: votable_id[vote_type].shuffle!.pop, votable_type: votable_type[vote_type], up_down: rand(2))
+    vote = user.votes.build(votable_id: votable_id[vote_type].shuffle!.pop, votable_type: votable_type[vote_type], up_down: [true, false].sample)
+    vote.save
   end
 end
 
