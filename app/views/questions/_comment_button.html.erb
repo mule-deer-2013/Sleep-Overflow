@@ -1,0 +1,8 @@
+<% if current_user %>
+  <%= form_tag(send("new_#{commentable.class.to_s.downcase}_comment_path", commentable), method: "get") do%>
+    <%= button_tag("comment on this #{commentable.class.to_s.downcase}") %>
+  <% end %><br><br>
+  <% if commentable.class == Question %> 
+    <br><br>
+  <% end %>
+<% end %>

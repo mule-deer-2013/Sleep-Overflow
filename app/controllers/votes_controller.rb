@@ -2,7 +2,6 @@ class VotesController < ApplicationController
 	def create
     vote = current_user.votes.build(params[:vote])
 		vote.save
-    puts vote.votable_type
     if vote.votable_type == "Answer"
       redirect_to question_path(vote.votable.question)
     elsif vote.votable_type == "Question"
