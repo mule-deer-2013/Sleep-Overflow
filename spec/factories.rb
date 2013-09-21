@@ -6,7 +6,6 @@ FactoryGirl.define do
   end
 
   factory :answer do
-    title { Faker::Lorem.sentence }
     content { Faker::Lorem.paragraph }
   end
 
