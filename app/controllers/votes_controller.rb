@@ -1,6 +1,7 @@
 class VotesController < ApplicationController
 	def create
     vote = current_user.votes.build(params[:vote])
+    # binding.pry
 		vote.save
     redirect_to question_path(vote.votable.question)
 

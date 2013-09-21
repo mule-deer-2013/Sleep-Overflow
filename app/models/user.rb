@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-  validates :username, :email, presence: true
+  validates :username, :email, :password, presence: true
   attr_accessible :username, :email, :password, :password_confirmation
   
   has_many :votes

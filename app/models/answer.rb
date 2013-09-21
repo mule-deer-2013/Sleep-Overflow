@@ -6,6 +6,8 @@ class Answer < ActiveRecord::Base
   belongs_to :user
   belongs_to :question
 
+  validates :content, :user_id, :question_id, presence: true
+
   def score
   	return votes.where(up_down: true).count - votes.where(up_down: false).count
   end

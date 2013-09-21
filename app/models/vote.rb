@@ -5,4 +5,7 @@ class Vote < ActiveRecord::Base
   belongs_to :votable, polymorphic: true
   validates_uniqueness_of :user_id, scope: [:votable_id, :votable_type]
 
+  validates :votable_id, :votable_type, :user_id, presence: true
+  validates_inclusion_of :up_down, :in => [true, false]
+
 end
