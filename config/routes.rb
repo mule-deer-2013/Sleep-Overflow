@@ -1,6 +1,6 @@
 SleepUnderflow::Application.routes.draw do
 
-  resources :questions, :except => [:edit, :update, :destroy] do
+  resources :questions, :except => [:edit, :destroy] do
     resources :votes, only: [:create, :update]
     resources :answers, :comments, :only => [:create, :new]
   end

@@ -16,14 +16,18 @@
 <%= render partial: "comment_button", locals: { commentable: @question } %>
 
 <% @question.answers.each do |answer| %>
+  <%= render partial: "best_answer_button", locals: { question: @question, answer_id: answer.id } %>
 
   <%= render partial: "vote_form", locals: { votable: answer, vote_boolean: true, new_vote: @vote, up_down: "upvote" } %>
-
-  <span class="answer_score" ><%= answer.score %></span>
+  <div>
+  	<% if best_answer?(@question, answer.id) %>
+  	  <h4>User Chosen Best Answer!</h4>
+  	<% end %>
+    <span class="answer_score" ><%= answer.score %></span>
+    <strong><%= answer.content %></strong><br><br>
+  </div>
 
   <%= render partial: "vote_form", locals: { votable: answer, vote_boolean: false, new_vote: @vote, up_down: "downvote" } %>
-
-  <strong><%= answer.content %></strong><br><br>
 
   <% answer.comments.each do |comment| %>
     <%= comment.content %><br>

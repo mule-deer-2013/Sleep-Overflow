@@ -25,4 +25,16 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
   end
 
+  def update
+    question = Question.find(params[:id])
+    if params[:question][:best_answer_id] == "0"
+      question.best_answer = nil
+      question.save
+    else
+      question.best_answer = Answer.find(params[:question][:best_answer_id])
+      question.save
+    end
+    redirect_to question
+  end
+
 end

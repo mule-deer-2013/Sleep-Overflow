@@ -1,0 +1,13 @@
+<% if question_creator?(question) %>
+  <% if best_answer?(question, answer_id) %>
+    <%= form_for question, url: question_path(question) do |f| %>
+      <%= f.hidden_field(:best_answer_id, value: 0) %>
+      <%= f.submit "Best Answer" %>
+    <% end %>
+  <% else %>
+    <%= form_for question, url: question_path(question) do |f| %>
+      <%= f.hidden_field(:best_answer_id, value: answer_id) %>
+      <%= f.submit "Best Answer" %>
+    <% end %>
+  <% end %>
+<% end %>
