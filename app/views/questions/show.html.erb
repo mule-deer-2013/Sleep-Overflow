@@ -12,7 +12,7 @@
 
 <strong><%= @question.content %></strong>
 
-<%= render partial: "add_answer_button", locals: { question: @question } %>
+<%= render partial: "add_answer_button", locals: { question: @question } %><br>
 
 <% @question.comments.each do |comment| %>
   <%= comment.content %><br>

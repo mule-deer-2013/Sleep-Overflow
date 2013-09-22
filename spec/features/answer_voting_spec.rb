@@ -62,7 +62,6 @@ let!(:answer) { FactoryGirl.create :answer, user_id: user.id, question_id: quest
 
     it "can change the vote count" do
       within ".new_answer_upvote" do
-        binding.pry
         expect { click_button "upvote" }.to change{ answer.score }.by(1)
       end
     end

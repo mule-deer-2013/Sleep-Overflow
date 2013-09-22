@@ -1,7 +1,7 @@
 class QuestionsController < ApplicationController
   def index
     @user = User.new
-    @questions = Question.all
+    @questions = Question.order("score DESC")
     @vote = Vote.new
   end
 
@@ -25,9 +25,9 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     best_answer = @question.best_answer
     if best_answer
-      @answers = (@question.answers - [best_answer]).unshift(best_answer)
+      @answers = (@question.answers.order("score DESC") - [best_answer]).unshift(best_answer)
     else
-      @answers = @question.answers
+      @answers = @question.answers.order("score DESC")
     end
   end
 

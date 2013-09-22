@@ -25,7 +25,6 @@ feature 'User add answers' do
 
     it "create answer" do
       click_button "Add an Answer"
-      save_and_open_page
       fill_in "Details", :with => "Yes, you do."
       expect { click_button 'Create answer' }.to change(Answer, :count).by(1)
     end
