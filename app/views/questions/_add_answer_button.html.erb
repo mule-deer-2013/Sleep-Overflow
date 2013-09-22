@@ -1,0 +1,5 @@
+<% if current_user %>
+  <%= form_tag new_question_answer_path(question), method: "get" do %>
+    <%= button_tag("Add an Answer") %>
+  <% end %>
+<% end %>

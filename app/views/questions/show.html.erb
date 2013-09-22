@@ -10,7 +10,9 @@
 
 <%= render partial: "vote_form", locals: { votable: @question, vote_boolean: false, new_vote: @vote, up_down: "downvote" } %><br>
 
-  <strong><%= @question.content %></strong>
+<strong><%= @question.content %></strong>
+
+<%= render partial: "add_answer_button", locals: { question: @question } %>
 
 <% @question.comments.each do |comment| %>
   <%= comment.content %><br>
