@@ -2,8 +2,8 @@
   <div class="vote">
     <%= render partial: "vote_form", locals: { votable: question, vote_boolean: true, new_vote: @vote, up_down: "upvote" } %>
     <div>
-    <span class="question_score" ><%= question.score %></span>
-    <%= link_to question.title, question %><br>
+      <span class="question_score" ><%= question.score %></span>
+      <%= link_to question.title, question %><br>
     </div>
 
     <%= render partial: "vote_form", locals: { votable: question, vote_boolean: false, new_vote: @vote, up_down: "downvote" } %><br>
