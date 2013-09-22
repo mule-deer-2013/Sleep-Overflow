@@ -1,5 +1,5 @@
 class Answer < ActiveRecord::Base
-  attr_accessible :content, :user_id, :question_id, :is_best_answer
+  attr_accessible :content, :user_id, :question_id, :is_best_answer, :score
 
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
@@ -8,7 +8,7 @@ class Answer < ActiveRecord::Base
 
   validates :content, :user_id, :question_id, presence: true
 
-  def score
-  	return votes.where(up_down: true).count - votes.where(up_down: false).count
+  def tally
+  	votes.where(up_down: true).count - votes.where(up_down: false).count
   end
 end
