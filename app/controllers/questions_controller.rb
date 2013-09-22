@@ -23,6 +23,12 @@ class QuestionsController < ApplicationController
       @current_user = User.find(session[:user_id])
     end
     @question = Question.find(params[:id])
+    best_answer = @question.best_answer
+    if best_answer
+      @answers = (@question.answers - [best_answer]).unshift(best_answer)
+    else
+      @answers = @question.answers
+    end
   end
 
   def update

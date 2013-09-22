@@ -2,8 +2,10 @@
 <%= render partial: "vote_form", locals: { votable: @question, vote_boolean: true, new_vote: @vote, up_down: "upvote" } %>
 
 <div>
-  <span class="question_score" ><%= @question.score %></span>
-  <h2><%= @question.title %></h2>
+  <h2>
+    <span class="question_score" ><%= @question.score %></span>
+    <%= @question.title %>
+  </h2>
 </div>
 
 <%= render partial: "vote_form", locals: { votable: @question, vote_boolean: false, new_vote: @vote, up_down: "downvote" } %><br>
@@ -16,14 +18,15 @@
 
 <%= render partial: "comment_button", locals: { commentable: @question } %>
 
-<% @question.answers.each do |answer| %>
+<% @answers.each do |answer| %>
   <%= render partial: "best_answer_button", locals: { question: @question, answer_id: answer.id } %>
 
+  <% if best_answer?(@question, answer.id) %>
+    <h4>User Chosen Best Answer!</h4>
+  <% end %>
+  
   <%= render partial: "vote_form", locals: { votable: answer, vote_boolean: true, new_vote: @vote, up_down: "upvote" } %>
   <div>
-  	<% if best_answer?(@question, answer.id) %>
-  	  <h4>User Chosen Best Answer!</h4>
-  	<% end %>
     <span class="answer_score" ><%= answer.score %></span>
     <strong><%= answer.content %></strong>
   </div>
