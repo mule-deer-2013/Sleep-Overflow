@@ -1,6 +1,8 @@
+<div class='container'><center>
 <%= form_for @question, url: {action: "create"} do |f| -%>
-  <%= f.label :form_title, "Create Question Form" %><br />
-  <%= f.text_field :title, placeholder: "Question" %><br />
-  <%= f.text_area :content, size: "40x12", placeholder: "Details" %><br />
-  <%= f.submit "Create Question" %>
+  <%= f.text_field :title, placeholder: "Question" %><br /><br>
+  <%= f.text_area :content, size: "40x7", placeholder: "Add some more details here." %><br /><br>
+  <%= f.submit "create question", class: "btn btn-success" %>
 <% end -%>
+</center>
+</div>

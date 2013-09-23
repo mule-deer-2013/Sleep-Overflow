@@ -1,3 +1,5 @@
+<div class='container'><br><center>
+
 <% if question_creator?(question) %>
   <% if best_answer?(question, answer_id) %>
     <%= form_for question, url: question_path(question) do |f| %>
@@ -11,3 +13,6 @@
     <% end %>
   <% end %>
 <% end %>
+</center>
+
+<div>

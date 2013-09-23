@@ -7,42 +7,48 @@
     <div class='col-md-4'>
      <div class="well well-sm">
       <center>
-        <h3><%= link_to question.title, question %></h3><br>
-        <%= question.content %></center><br><br>
-        <% end %>
+        <h3><%= link_to question.title, question %></h3>
+        <%= question.content %></center><br>
       </div>
     </div>
     <% end %>
+    <% end %>
   </div><br><br>
 
-  <div class="panel panel-danger"><div class="panel-heading"><h3> my answers </h3></div></div><br><br>    <div class="user_answers">
+  <div class="panel panel-danger"><div class="panel-heading"><h3> my answers </h3></div></div>
+  <br><br>
   <% @user_answers.each_slice(1) do |answer_row| %>
   <div class='row'>
     <% answer_row.each do |this_answer| %>
     <div class='col-md-4'>
-     <div class="well well-sm">
-
+     <div class="well well-sm"><center>
       <strong>Answer:</strong> <%= this_answer.content  %><br>
-      <strong>Question:</strong> <%= link_to this_answer.question.title, question_path(this_answer) %><br>
-      <% end %>
-      <% end %>
-    </div></div></div>
-
-    <div class="panel panel-warning"><div class="panel-heading"><h3> my comments </h3></div></div><br><br>    <div class="user_answers">
-    <div class ="user_comments">
-      <% @user_comments.each_slice(1) do |comment_row| %>
-      <% comment_row.each do |this_comment| %>
-      <div class='col-md-4'>
-        <div class="well well-sm">
-          <strong>Comment:</strong> <%= this_comment.content %><br>
-          <% if this_comment.commentable_type == "Answer" %>
-          <%= link_to this_comment.commentable.question.title, question_path(this_comment.commentable.question) %>
-          <% else %>
-          <%= link_to this_comment.commentable.title, question_path(this_comment.commentable) %>
-          <%end%>
-          <%end%>
-        </div>
-        <% end %>
+      <strong>Question:</strong> <%= link_to this_answer.question.title, question_path(this_answer) %><br></center>
     </div>
+  </div>
+  <% end %>
+  <% end %>
 
+
+<br><br>
+<div class="panel panel-warning"><div class="panel-heading"><h3> my comments </h3></div></div>
+<br><br>    
+<% @user_comments.each_slice(1) do |comment_row| %>
+<div class='row'>
+<% comment_row.each do |this_comment| %>
+<div class='col-md-4'>
+  <div class="well well-sm">
+    <strong>Comment:</strong> <%= this_comment.content %><br>
+    <% if this_comment.commentable_type == "Answer" %>
+    <%= link_to this_comment.commentable.question.title, question_path(this_comment.commentable.question) %>
+    <% else %>
+    <%= link_to this_comment.commentable.title, question_path(this_comment.commentable) %>
+    <%end%>
+  </div>
+</div>
+<% end %>
+<% end %>
+
+</div>
+</center>
 </div>

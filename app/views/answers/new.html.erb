@@ -1,5 +1,8 @@
+<div class='container'><br><center>
 <%= form_for @answer, url: {action: "create"} do |f| -%>
-  <%= f.text_area :content, size: "40x12", placeholder: "Details" %><br />
-  <%= f.hidden_field(:user_id, value: current_user.id) %>
-  <%= f.submit "Create answer" %>
+  <%= f.text_area :content, size: "40x7", placeholder: "Here is my answer..." %><br />
+  <%= f.hidden_field(:user_id, value: current_user.id) %><br><br>
+  <%= f.submit "submit answer", class: "btn btn-success" %>
 <% end -%>
+</center>
+</div>

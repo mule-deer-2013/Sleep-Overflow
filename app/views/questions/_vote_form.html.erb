@@ -1,3 +1,5 @@
+<div class='container'><br><center>
+
 <% if current_user %>
   <%if vote = current_vote(votable) %>
     <%= form_for vote, url: send("#{votable.class.to_s.downcase}_vote_path", votable, vote), html: { class: "edit #{votable.class.to_s.downcase} #{up_down}" } do |f| %>
@@ -13,3 +15,7 @@
     <% end %>
   <% end %>
 <% end %>
+
+</center>
+
+</div>

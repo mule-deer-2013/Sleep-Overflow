@@ -1,8 +1,13 @@
+<div class='container'><br><center>
+
 <% if current_user %>
   <%= form_tag(send("new_#{commentable.class.to_s.downcase}_comment_path", commentable), method: "get") do%>
-    <%= button_tag("comment on this #{commentable.class.to_s.downcase}") %>
+    <%= button_tag("comment on this #{commentable.class.to_s.downcase}", class: 'btn btn-info') %>
   <% end %><br><br>
   <% if commentable.class == Question %> 
     <br><br>
   <% end %>
 <% end %>
+</center>
+
+</div>

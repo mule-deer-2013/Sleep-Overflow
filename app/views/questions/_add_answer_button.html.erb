@@ -1,5 +1,12 @@
+<div class='container'><br><center>
+
 <% if current_user %>
   <%= form_tag new_question_answer_path(question), method: "get" do %>
-    <%= button_tag("Add an Answer") %>
+    <%= button_tag("add answer", class: 'btn btn-success') %>
   <% end %>
+
 <% end %>
+
+</center>
+
+</div>
