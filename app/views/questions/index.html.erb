@@ -1,11 +1,23 @@
-<% @questions.each do |question|%>
-  <div class="vote">
-    <%= render partial: "vote_form", locals: { votable: question, vote_boolean: true, new_vote: @vote, up_down: "upvote" } %>
-    <div>
-      <span class="question_score" ><%= question.score %></span>
-      <%= link_to question.title, question %><br>
-    </div>
+<div class='container'>
+  <% @questions.each_slice(3) do |question_row| %>
+  <div class='row'>
+    <% question_row.each do |question| %>
+    <div class='col-md-4'>
+        <div class="vote">
 
-    <%= render partial: "vote_form", locals: { votable: question, vote_boolean: false, new_vote: @vote, up_down: "downvote" } %><br>
+          <div>
+            <h3><%= link_to question.title, question %></h3><br>
+            <span class="question_score" ><%= question.score %></span>
+          <%= render partial: "vote_form", locals: { votable: question, vote_boolean: true, new_vote: @vote, up_down: "^" } %>
+          <%= render partial: "vote_form", locals: { votable: question, vote_boolean: false, new_vote: @vote, up_down: "v" } %><br>
+            <div><%= question.content %></div>
+          </div>
+
+        </div>
+        
+      </div>
+      <% end %>
+    </div>
+    <% end %>
   </div>
-<% end %>
+

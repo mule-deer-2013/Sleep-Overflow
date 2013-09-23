@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SleepUnderflow</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<%= render "layouts/conditional_login_nav_bar"  %>
-<%= yield %>
-</body>
+  <head>
+    <title>SleepUnderflow</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" type="text/css" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+  </head>
+  <body>
+    <%= render "layouts/conditional_login_nav_bar" %>
+    <%= yield %>
+  </body>
 </html>

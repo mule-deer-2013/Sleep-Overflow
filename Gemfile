@@ -24,6 +24,7 @@ gem 'jquery-rails'
 gem 'pry-rails'
 gem 'quiet_assets'
 gem 'sextant'
+gem 'gravatar-ultimate'
 
 group :test, :development do
   gem "rspec-rails", "~> 2.0"
