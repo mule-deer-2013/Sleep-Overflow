@@ -1,5 +1,4 @@
-
-FactoryGirl.define do 
+FactoryGirl.define do
   factory :question do
     title { Faker::Lorem.sentence }
     content { Faker::Lorem.paragraph }
@@ -12,6 +11,6 @@ FactoryGirl.define do
   factory :user do
     username { Faker::Name.name }
     email { Faker::Internet.email }
-    password { "password" }
+    password "password"
   end
 end

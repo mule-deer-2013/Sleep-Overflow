@@ -8,7 +8,8 @@ class Question < ActiveRecord::Base
   has_many :comments, as: :commentable
   has_many :votes, as: :votable
 
+  # REVIEW: not tested.
   def tally
-    votes.where(up_down: true).count - votes.where(up_down: false).count
+    votes.map(&:upvote?).count - votes.map(&:downvote?).count
   end
 end

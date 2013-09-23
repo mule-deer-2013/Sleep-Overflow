@@ -1,7 +1,8 @@
 <div class='container'><br><center>
 
+# we can use helper method for this.
 <% if current_user %>
-  <%if vote = current_vote(votable) %>
+  <%if current_user.voted? votable %>
     <%= form_for vote, url: send("#{votable.class.to_s.downcase}_vote_path", votable, vote), html: { class: "edit #{votable.class.to_s.downcase} #{up_down}" } do |f| %>
       <%= f.hidden_field(:up_down, value: vote_boolean) %>
       <%= f.submit "#{up_down}",  class: "#{votable.class.to_s.downcase} #{up_down} btn btn-default" %>

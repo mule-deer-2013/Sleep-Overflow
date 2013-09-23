@@ -8,6 +8,7 @@ class Answer < ActiveRecord::Base
 
   validates :content, :user_id, :question_id, presence: true
 
+  # REVIEW: look at question tally implementation
   def tally
   	votes.where(up_down: true).count - votes.where(up_down: false).count
   end

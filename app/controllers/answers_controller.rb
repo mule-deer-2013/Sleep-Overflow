@@ -4,6 +4,7 @@ class AnswersController < ApplicationController
     @answer = Answer.new
   end
 
+  # REVIEW: look at questions#create implementation
   def create
     answer = Answer.new(params[:answer])
     question = Question.find(params[:question_id])

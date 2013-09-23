@@ -1,15 +1,16 @@
+// formatting and indentation is terrible
 <div class='container'><br><center>
 
-<br><br><br><br>
-    <div class="well well-sm"><br>
-<%= render partial: "vote_form", locals: { votable: @question, vote_boolean: true, new_vote: @vote, up_down: "upvote" } %>
-  
+<br><br><br><br> // try to avoid br and use styles
+<div class="well well-sm"><br>
+  <%= render partial: "vote_form", locals: { votable: @question, vote_boolean: true, new_vote: @vote, up_down: "upvote" } %>
+
   <h2 style="color:red">
     <%= @question.score %></h2><h2>
-  
+
     <%= @question.title %>
   </h2>
-  
+
 
 
 <%= render partial: "vote_form", locals: { votable: @question, vote_boolean: false, new_vote: @vote, up_down: "downvote" } %><br>
@@ -29,7 +30,7 @@
 <%= render partial: "comment_button", locals: { commentable: @question } %>
 </div>
 
-<% @answers.each_slice(1) do |answer_row| 
+<% @answers.each_slice(1) do |answer_row|
 answer_row.each do |answer| %>
     <div class="well well-sm"><br>
 
@@ -38,7 +39,7 @@ answer_row.each do |answer| %>
   <% if best_answer?(@question, answer.id) %>
     <h4>User Chosen Best Answer!</h4>
   <% end %>
-  
+
   <%= render partial: "vote_form", locals: { votable: answer, vote_boolean: true, new_vote: @vote, up_down: "upvote" } %>
   <div><br>
     <h5 style="color:red"><%= answer.score %></h5>

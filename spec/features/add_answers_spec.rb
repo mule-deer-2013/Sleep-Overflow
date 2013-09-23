@@ -7,20 +7,19 @@ feature 'User add answers' do
   context "on question show page" do
 
     before do
-      visit root_path
-      fill_in "Username", :with => user.username
-      fill_in "Password", :with => "password"
-      click_button "signin"
+      # look in capybara_helpers.rb
+      login user
       visit question_path(question)
     end
 
+    # this is repetitive why? if I can click it then I can see it.
     it "sees a button to create an answer" do
       find_button("Add an Answer")
     end
 
     it "get create answer form after clicking button" do
       click_button "Add an Answer"
-      current_path.should == "/questions/#{question.id}/answers/new"
+      expect(current_path).to eq new_question_answer_path(question)
     end
 
     it "create answer" do

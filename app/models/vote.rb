@@ -3,7 +3,7 @@ class Vote < ActiveRecord::Base
 
   belongs_to :user
   belongs_to :votable, polymorphic: true
-  
+
   validates_uniqueness_of :user_id, scope: [:votable_id, :votable_type]
   validates :votable_id, :votable_type, :user_id, presence: true
   validates_inclusion_of :up_down, :in => [true, false]
@@ -11,9 +11,19 @@ class Vote < ActiveRecord::Base
   after_save :update_question_answer_score
   after_destroy :update_question_answer_score
 
+  # use :cache_counter (look it up)
   def update_question_answer_score
     votable_obj = self.votable
     votable_obj.score = votable_obj.tally
     votable_obj.save
+  end
+
+  def upvote?
+    self.up_down
+  end
+
+
+  def downvote?
+    !self.up_down
   end
 end
