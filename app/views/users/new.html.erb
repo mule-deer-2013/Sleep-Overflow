@@ -1,11 +1,7 @@
-<%= form_for @user do |f|%>
-  <%= f.label :username %>
-  <%= f.text_field :username %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
-  <%= f.label :password %>
-  <%= f.password_field :password %>
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
-  <%= f.submit %>
-<% end %>
+<center><%= form_for @user do |f|%>
+  <%= f.text_field :username, placeholder: "username" %>
+  <%= f.text_field :email, placeholder: "email" %><br>
+  <%= f.password_field :password, placeholder: "password" %>
+  <%= f.password_field :password_confirmation, placeholder: "confirm password" %><br><br>
+  <%= f.submit 'create user', class: 'btn btn-success' %>
+<% end %></center>

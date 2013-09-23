@@ -1,16 +1,24 @@
+
+
 <div class='container'>
+
+<center>
+    <img src="http://www.happyworker.com/files/imagecache/magazine_600/files/story/sleeping%20at%20work.jpg"><br><br><br></center>
+ 
+
   <% @questions.each_slice(3) do |question_row| %>
   <div class='row'>
     <% question_row.each do |question| %>
     <div class='col-md-4'>
         <div class="vote">
 
-          <div>
+          <div class="well well-lg"><center>
             <h3><%= link_to question.title, question %></h3><br>
-            <span class="question_score" ><%= question.score %></span>
+          
           <%= render partial: "vote_form", locals: { votable: question, vote_boolean: true, new_vote: @vote, up_down: "^" } %>
+          <h3><%= question.score %></h3>
           <%= render partial: "vote_form", locals: { votable: question, vote_boolean: false, new_vote: @vote, up_down: "v" } %><br>
-            <div><%= question.content %></div>
+          <%= question.content %></center>
           </div>
 
         </div>
