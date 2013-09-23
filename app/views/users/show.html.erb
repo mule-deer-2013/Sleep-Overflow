@@ -1,33 +1,48 @@
-<br> <br>
-<h1>This is the profile page</h1>
-<h2> Questions I have posted </h2>
-<div class="user_questions" >
-<% @user_questions.each do |this_question| %> 
-<br> <%= link_to this_question.title, question_path(this_question) %>
-<% end %>
+<div class='container'><br><center>
+
+  <div class="panel panel-success"><div class="panel-heading"><h3> my questions </h3></div></div><br>
+  <% @user_questions.each_slice(1) do |question_row| %>
+  <div class='row'>
+    <% question_row.each do |question| %> 
+    <div class='col-md-4'>
+     <div class="well well-sm">
+      <center>
+        <h3><%= link_to question.title, question %></h3><br>
+        <%= question.content %></center><br><br>
+        <% end %>
+      </div>
+    </div>
+    <% end %>
+  </div><br><br>
+
+  <div class="panel panel-danger"><div class="panel-heading"><h3> my answers </h3></div></div><br><br>    <div class="user_answers">
+  <% @user_answers.each_slice(1) do |answer_row| %>
+  <div class='row'>
+    <% answer_row.each do |this_answer| %>
+    <div class='col-md-4'>
+     <div class="well well-sm">
+
+      <strong>Answer:</strong> <%= this_answer.content  %><br>
+      <strong>Question:</strong> <%= link_to this_answer.question.title, question_path(this_answer) %><br>
+      <% end %>
+      <% end %>
+    </div></div></div>
+
+    <div class="panel panel-warning"><div class="panel-heading"><h3> my comments </h3></div></div><br><br>    <div class="user_answers">
+    <div class ="user_comments">
+      <% @user_comments.each_slice(1) do |comment_row| %>
+      <% comment_row.each do |this_comment| %>
+      <div class='col-md-4'>
+        <div class="well well-sm">
+          <strong>Comment:</strong> <%= this_comment.content %><br>
+          <% if this_comment.commentable_type == "Answer" %>
+          <%= link_to this_comment.commentable.question.title, question_path(this_comment.commentable.question) %>
+          <% else %>
+          <%= link_to this_comment.commentable.title, question_path(this_comment.commentable) %>
+          <%end%>
+          <%end%>
+        </div>
+        <% end %>
+    </div>
+
 </div>
-
-<h2> Answers I have submitted </h2>
-<div class="user_answers">
-  <% @user_answers.each do |this_answer| %> 
-<br> <%= link_to this_answer.question.title, question_path(this_answer) %>
-<%= this_answer.content  %>
-<% end %>
-</div>
-
-
-<h2> Comments I have made </h2>
-<div class ="user_comments">
-<% @user_comments.each do |this_comment| %>
-<% if this_comment.commentable_type == "Answer" %>
-<%= link_to this_comment.commentable.question.title, question_path(this_comment.commentable.question) %>
-<% else %>
-<%= link_to this_comment.commentable.title, question_path(this_comment.commentable) %>
-<%end%>
-
-
-<%= this_comment.content %><br>
-<% end %>
-
-</div>
-
