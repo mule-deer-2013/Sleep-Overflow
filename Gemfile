@@ -31,6 +31,7 @@ group :test, :development do
   gem "factory_girl_rails"
   gem "faker"
   gem 'better_errors'
+  gem 'coveralls', require: false
 end
 
 group :test do
