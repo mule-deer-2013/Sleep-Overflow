@@ -1,14 +1,14 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/config/environment.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/config/environment.rb": [
         null,
         1,
         null,
         null,
         1
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/config/application.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/config/application.rb": [
         1,
         null,
         1,
@@ -72,7 +72,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/config/boot.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/config/boot.rb": [
         1,
         null,
         null,
@@ -80,7 +80,7 @@
         null,
         1
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/config/environments/test.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/config/environments/test.rb": [
         1,
         null,
         null,
@@ -119,7 +119,7 @@
         1,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/config/initializers/backtrace_silencers.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/config/initializers/backtrace_silencers.rb": [
         null,
         null,
         null,
@@ -128,7 +128,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/config/initializers/inflections.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/config/initializers/inflections.rb": [
         null,
         null,
         null,
@@ -145,14 +145,14 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/config/initializers/mime_types.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/config/initializers/mime_types.rb": [
         null,
         null,
         null,
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/config/initializers/secret_token.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/config/initializers/secret_token.rb": [
         null,
         null,
         null,
@@ -161,7 +161,7 @@
         null,
         1
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/config/initializers/session_store.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/config/initializers/session_store.rb": [
         null,
         null,
         1,
@@ -171,7 +171,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/config/initializers/wrap_parameters.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/config/initializers/wrap_parameters.rb": [
         null,
         null,
         null,
@@ -187,7 +187,7 @@
         1,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/controllers/answers_controller.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/controllers/answers_controller.rb": [
         1,
         null,
         1,
@@ -206,7 +206,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/controllers/application_controller.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -214,7 +214,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/helpers/application_helper.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/helpers/application_helper.rb": [
         1,
         1,
         2,
@@ -236,7 +236,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/helpers/session_helper.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/helpers/session_helper.rb": [
         1,
         1,
         162,
@@ -245,7 +245,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/models/answer.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/models/answer.rb": [
         1,
         1,
         null,
@@ -261,7 +261,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/controllers/comments_controller.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/controllers/comments_controller.rb": [
         1,
         null,
         1,
@@ -287,7 +287,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/models/comment.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/models/comment.rb": [
         1,
         1,
         null,
@@ -297,7 +297,7 @@
         1,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/controllers/questions_controller.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/controllers/questions_controller.rb": [
         1,
         1,
         34,
@@ -345,7 +345,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/models/question.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/models/question.rb": [
         1,
         1,
         1,
@@ -361,7 +361,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/controllers/sessions_controller.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/controllers/sessions_controller.rb": [
         1,
         null,
         1,
@@ -391,7 +391,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/controllers/users_controller.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -421,7 +421,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/models/user.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/models/user.rb": [
         1,
         1,
         1,
@@ -433,7 +433,7 @@
         1,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/controllers/votes_controller.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/controllers/votes_controller.rb": [
         1,
         1,
         0,
@@ -471,7 +471,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/app/models/vote.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/app/models/vote.rb": [
         1,
         1,
         null,
@@ -492,7 +492,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/spec/factories.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/spec/factories.rb": [
         null,
         1,
         1,
@@ -511,7 +511,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/config/routes.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/config/routes.rb": [
         1,
         null,
         1,
@@ -588,7 +588,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/spec/features/add_questions_spec.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/spec/features/add_questions_spec.rb": [
         1,
         null,
         1,
@@ -624,203 +624,11 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/spec/features/answer_voting_spec.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/spec/features/answer_voting_spec.rb": [
         1,
         null,
         1,
         9,
-        9,
-        9,
-        1,
-        null,
-        1,
-        3,
-        null,
-        null,
-        1,
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        5,
-        5,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/spec/features/pick_best_answer_spec.rb": [
-        1,
-        1,
-        7,
-        7,
-        7,
-        7,
-        7,
-        null,
-        1,
-        null,
-        1,
-        4,
-        4,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        2,
-        2,
-        0,
-        0,
-        0,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/spec/features/profile_page_spec.rb": [
-        1,
-        null,
-        null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        2,
-        2,
-        2,
-        2,
-        2,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        0,
-        null,
-        null,
-        null
-      ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/spec/features/question_voting_spec.rb": [
-        1,
-        null,
-        1,
         9,
         9,
         1,
@@ -864,6 +672,198 @@
         0,
         0,
         null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "/Users/ianaroot/Desktop/Sleep-Overflow/spec/features/pick_best_answer_spec.rb": [
+        1,
+        1,
+        7,
+        7,
+        7,
+        7,
+        7,
+        null,
+        1,
+        null,
+        1,
+        4,
+        4,
+        0,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        2,
+        2,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/ianaroot/Desktop/Sleep-Overflow/spec/features/profile_page_spec.rb": [
+        1,
+        null,
+        null,
+        null,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null,
+        null,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        0,
+        null,
+        null,
+        null
+      ],
+      "/Users/ianaroot/Desktop/Sleep-Overflow/spec/features/question_voting_spec.rb": [
+        1,
+        null,
+        1,
+        9,
+        9,
+        1,
+        null,
+        1,
+        3,
+        null,
+        null,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        1,
+        1,
+        5,
+        5,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        0,
+        0,
+        null,
         null,
         1,
         0,
@@ -890,7 +890,7 @@
         null,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/spec/models/answer_spec.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/spec/models/answer_spec.rb": [
         1,
         null,
         1,
@@ -903,7 +903,7 @@
         2,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/spec/models/comment_spec.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/spec/models/comment_spec.rb": [
         1,
         null,
         1,
@@ -915,20 +915,7 @@
         2,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/spec/models/question_spec.rb": [
-        1,
-        null,
-        1,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        2,
-        null
-      ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/spec/models/user_spec.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/spec/models/question_spec.rb": [
         1,
         null,
         1,
@@ -941,7 +928,20 @@
         2,
         null
       ],
-      "/Users/Jimbo/devbootcamp/Sleep-Overflow/spec/models/vote_spec.rb": [
+      "/Users/ianaroot/Desktop/Sleep-Overflow/spec/models/user_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null
+      ],
+      "/Users/ianaroot/Desktop/Sleep-Overflow/spec/models/vote_spec.rb": [
         1,
         null,
         1,
@@ -956,6 +956,6 @@
         null
       ]
     },
-    "timestamp": 1380421252
+    "timestamp": 1382490114
   }
 }
